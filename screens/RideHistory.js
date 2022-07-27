@@ -49,6 +49,7 @@ export default class RideHistoryScreen extends Component {
 
     db.collection("transactions")
       .where("bike_id", "==", bikeId)
+      .limit(10)
       .get()
       .then(snapshot => {
         snapshot.docs.map(doc => {
